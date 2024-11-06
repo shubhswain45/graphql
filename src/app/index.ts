@@ -14,9 +14,9 @@ export async function initServer() {
     };
 
     // Use CORS middleware
-    app.use(cors(corsOptions));
+    app.use(cors(corsOptions))
 
-    app.use(bodyParser.json());
+    app.use(bodyParser.json())
 
     const graphqlServer = new ApolloServer({
         typeDefs: `
