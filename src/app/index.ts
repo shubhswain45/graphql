@@ -7,7 +7,15 @@ import bodyParser from 'body-parser';
 export async function initServer() {
     const app = express();
 
-    app.use(cors());
+    // CORS configuration
+    const corsOptions = {
+        origin: ['http://localhost:3000'],
+        credentials: true,
+    };
+
+    // Use CORS middleware
+    app.use(cors(corsOptions));
+
     app.use(bodyParser.json());
 
     const graphqlServer = new ApolloServer({
